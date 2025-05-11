@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=0, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is Body Tag</h1>
+   
+    <button class="js-button-click" id="btnclick">
+        
+                 Submit</button>
+
+    <button class="js-button-one" id="btnclickone">
+
+    EventOccur</button>
+   
+
+    <p class="text">This is Paragraph Text</p>
+
+    <b id="effects"></b>
+
+    <script>
+            const buttonElement = document.querySelector(".js-button-click");
+
+            const textElemnt = document.querySelector('.text');
+
+            const buttonElementOneTime = document.querySelector('.js-button-one');
+
+
+            buttonElement.addEventListener ('click',responseClick,true);
+            textElemnt.addEventListener('mouseover', responseMouseOver,true);
+            textElemnt.addEventListener('mouseout',responseMouseOut);
+            buttonElementOneTime.addEventListener('click',oneTimeEvent);
+
+            function oneTimeEvent(){
+                
+                alert("Hi!!!");
+                buttonElementOneTime.removeEventListener('click',oneTimeEvent);
+            }
+
+
+            function responseMouseOut()
+            {
+                document.getElementById('effects').innerHTML +='MouseOut Event'+ "<br/>"
+            }
+            function responseMouseOver(){
+                document.getElementById('effects').innerHTML +='MouseOver Event'+ "<br/>"
+    
+            }
+            function responseClick()
+            {
+                alert("The button is cliked !!!!!.");
+                document.getElementById("effects").innerHTML +='Click Event' +"<br/>";
+             
+            }
+            
+            
+
+
+
+    </script>
+</body>
+</html>
